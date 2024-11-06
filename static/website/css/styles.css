@@ -1,0 +1,161 @@
+/* Base styling for mobile-first design */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #FAF9F6;
+    /* Neutral light background */
+    color: #2E2E2E;
+    /* Dark gray text for readability */
+    margin: 0;
+    padding: 0;
+}
+
+/* Header styling */
+header {
+    /* background-color: #932D48; */
+    /* Primary maroon color */
+    color: #FAF9F6;
+    /* Light text on dark background */
+    background-image: url('/static/website/images/classroom-red-filter.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 15px 20px;
+    text-align: center;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2em;
+    color: #F9E4D4;
+    /* Soft beige for a welcoming contrast */
+}
+
+/* Logo styling */
+.header-logo {
+    height: 100px;
+    /* Adjust size as needed */
+    width: auto;
+    /* Maintain aspect ratio */
+    margin-right: 20px;
+    border-radius: 50%;
+    vertical-align: bottom;
+}
+
+/* Center container styling */
+.header-center {
+    text-align: center;
+    /* Center-align title and nav within .header-center */
+    flex-grow: 1;
+    /* Allows the center section to take up remaining space */
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    margin-top: auto;
+    background-color: #600D29;
+    /* Position navbar at the bottom of the header */
+    bottom: 0;
+    /* Align navbar to the bottom of the header */
+    /* Make sure it aligns with the left side */
+    padding: 10px;
+    /* Adjust padding for navbar */
+    /* Space between links */
+}
+
+/* Navigation styling */
+nav a {
+    color: #FAF9F6;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #D1A054;
+    /* Warm gold for hover effect */
+}
+
+/* Mobile responsiveness - stack the nav vertically on smaller screens */
+@media (max-width: 768px) {
+
+    /* Change the nav to a column layout */
+    nav {
+        flex-direction: column;
+        align-items: center;
+        /* Center-align links vertically */
+        gap: 10px;
+        /* Space between links */
+    }
+
+
+    header h1 {
+        font-size: 1.5em;
+        /* Adjust title font size for smaller screens */
+    }
+}
+
+
+/* Button styling */
+button,
+.btn {
+    background-color: #932D48;
+    /* Primary color */
+    color: #FAF9F6;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 4px;
+}
+
+button:hover,
+.btn:hover {
+    background-color: #D1A054;
+    /* Warm gold for hover */
+}
+
+/* Main content styling */
+main {
+    width: 100%;
+    padding: 15px;
+    box-sizing: border-box;
+    background-color: #F9E4D4;
+    /* Soft beige for sections */
+    border-radius: 8px;
+}
+
+/* Responsive layout for larger screens */
+@media (min-width: 768px) {
+    main {
+        width: 33.33%;
+        margin: 0 auto;
+    }
+}
+
+@media (min-width: 1200px) {
+    main {
+        width: 60%;
+    }
+}
+
+/* Footer styling */
+footer {
+    background-color: #2E2E2E;
+    /* Dark neutral for footer */
+    color: #FAF9F6;
+    text-align: center;
+    padding: 15px;
+    font-size: 0.9em;
+}
+
+footer a {
+    /* Dark neutral for footer */
+    color: #FAF9F6;
+    text-align: center;
+    padding: 15px;
+    font-size: 0.9em;
+}
