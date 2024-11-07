@@ -1,3 +1,4 @@
+[!image](/static/website/images/corneli-primary-logo.png)
 # Corneli Primary
 
 **Corneli Primary** is a Django-based web application for Corneli Primary School, providing a public-facing static website and a secure portal for parent-teacher communication. The app is designed to offer essential information for parents and students and features a parent-teacher portal accessible with a login.
