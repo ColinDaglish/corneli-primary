@@ -1,3 +1,4 @@
 [submodule "authentication"]
 	path = authentication
-	url = https://github.com/ColinDaglish/authentication.git
+	url = git@github.com:ColinDaglish/authentication.git
+	branch = main

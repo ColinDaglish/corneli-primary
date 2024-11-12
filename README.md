@@ -1,4 +1,4 @@
-<img src= "/static/website/images/corneli-primary-logo.png" width=100px height=100px>
+<img src= "/static/website_content/images/corneli-primary-logo.png" width=100px height=100px>
 
 # Corneli Primary
 

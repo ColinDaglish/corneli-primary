@@ -1,0 +1,14 @@
+services:
+  app:
+    container_name: corneli-primary
+    build:
+      context: .
+      dockerfile: dockerfile
+    entrypoint: >
+      sh -c "/usr/src/app/deploy/start-server-local.sh"
+    volumes:
+      - ./deploy:/usr/src/app/deploy
+    ports:
+      - "8000:8000"
+    env_file:
+      - .env

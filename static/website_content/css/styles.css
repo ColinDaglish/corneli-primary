@@ -15,7 +15,7 @@ header {
     /* Primary maroon color */
     color: #FAF9F6;
     /* Light text on dark background */
-    background-image: url('/static/website/images/classroom-red-filter.png');
+    background-image: url('/static/website_content/images/classroom-red-filter.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;

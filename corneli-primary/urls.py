@@ -1,5 +1,5 @@
 """
-URL configuration for corneliprimary project.
+URL configuration for corneli-primary project.
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/5.1/topics/http/urls/
@@ -21,6 +21,5 @@ from django.urls import path, include
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path("auth", include("authentication.urls")),
-    path("", include("website.urls")),
+    path("", include("website_content.urls")),
 ]
