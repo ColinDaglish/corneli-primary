@@ -4,11 +4,14 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>
       {% block title %}My Website{% endblock %}
     </title>
     <link rel="stylesheet" href="{% static 'website_content/css/styles.css' %}">
-    <link rel="icon" type="image/x-icon" href="/static/website_content/images/corneli-primary-logo.ico">
+    <link rel="icon"
+          type="image/x-icon"
+          href="/static/website_content/images/corneli-primary-logo.ico">
   </head>
   <body>
     <header>
@@ -17,17 +20,7 @@
            class="header-logo">
       <div class="header-center">
         <h1>Corneli Primary School</h1>
-        <nav role="navigation" aria-label="Main navigation">
-          <a href="/">Home</a>
-          <a href="/about/">About Us</a>
-          <a href="/admissions/">Admissions</a>
-          <a href="/curriculum/">Classes & Curriculum</a>
-          <a href="/parent-information/">Parent Information</a>
-          <a href="/school-life/">School Life</a>
-          <a href="/policies/">Policies</a>
-          <a href="/contact-us/">Contact Us</a>
-          <a href="/news-and-events/">News and Events</a>
-        </nav>
+        {% include "website_content/navigation.html" %}
       </div>
     </header>
     <main role="main">

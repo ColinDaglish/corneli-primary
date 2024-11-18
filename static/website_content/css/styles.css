@@ -1,20 +1,41 @@
+/* set colour palette vars */
+:root{
+    --primary-deep-burgandy: #8C2B4F;
+    --secondary-mustard-yellow: #F2AC29; 
+    --secondary-off-white: #F2F2F2;
+    --neutral-dark-grey: #333333;
+    --neutral-medium-grey: #666666;
+    --neutral-light-grey: #CCCCCC;
+    --neutral-white: #FFFFFF;
+    --link-unvisited-deep-burgandy:#8C2B4F;
+    --link-visited-dark-burgandy:#6C1F3C;
+    --analogous-red:#C24F4F;
+    --analogous-purple: #B22B8C;
+    --monochromatic-dark-burgandy:#6C1F3C;
+    --monochromatic-deep-burgandy:#8C2B4F;
+    --monochromatic-light-burgandy:#D24F4F;
+    --monochromatic-pale-burgandy:#E6B3C1;
+    --success-lime-green:#32CD32;
+    --error-red:#FF4D4D;
+    --complementary-green:#4FBA8C;
+    --triadic-mustard-yellow:#F2AC29;
+    --triadic-blue:#29A6F2;
+    --accent-tomato: #FF6347;
+    --accent-dark-turquoise: #00CED1;
+}
+
 /* Base styling for mobile-first design */
 body {
     font-family: Arial, sans-serif;
-    background-color: #FAF9F6;
-    /* Neutral light background */
-    color: #2E2E2E;
-    /* Dark gray text for readability */
+    background-color: var(--neutral-white);
+    color: var(--neutral-dark-grey);
     margin: 0;
     padding: 0;
 }
 
 /* Header styling */
 header {
-    /* background-color: #932D48; */
-    /* Primary maroon color */
-    color: #FAF9F6;
-    /* Light text on dark background */
+    color: var(--neutral-white);
     background-image: url('/static/website_content/images/classroom-red-filter.png');
     background-size: cover;
     background-position: center;
@@ -30,8 +51,8 @@ header {
 header h1 {
     margin: 0;
     font-size: 2em;
-    color: #F9E4D4;
-    /* Soft beige for a welcoming contrast */
+    color: var(--neutral-white) ;
+
 }
 
 /* Logo styling */
@@ -56,42 +77,61 @@ header h1 {
 nav {
     display: flex;
     justify-content: space-between;
-    gap: 15px;
     margin-top: auto;
-    background-color: #600D29;
-    /* Position navbar at the bottom of the header */
+    background-color: var(--primary-deep-burgandy);
     bottom: 0;
-    /* Align navbar to the bottom of the header */
-    /* Make sure it aligns with the left side */
-    padding: 10px;
-    /* Adjust padding for navbar */
-    /* Space between links */
+    padding: 15px;
+    flex-wrap: wrap; 
 }
 
-/* Navigation styling */
-nav a {
-    color: #FAF9F6;
+.nav-button {
+    padding: 5px 10px;
+    text-align: center;
     text-decoration: none;
-    font-weight: bold;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+nav a {
+    color: var(--secondary-off-white);
+    text-decoration: none;
+    padding:10px;
+    border: solid 1px;
+    border-color: var(--monochromatic-dark-burgandy);
+    flex:1;
 }
 
 nav a:hover {
-    color: #D1A054;
-    /* Warm gold for hover effect */
+    color: var(--secondary-mustard-yellow);
+    text-decoration: none;
 }
 
 /* Mobile responsiveness - stack the nav vertically on smaller screens */
 @media (max-width: 768px) {
-
+    header{
+        background-image: none;
+        background-color: var(--neutral-dark-grey);
+    }
     /* Change the nav to a column layout */
     nav {
         flex-direction: column;
-        align-items: center;
+        align-items: stretch;
         /* Center-align links vertically */
-        gap: 10px;
+        gap: 5px;
         /* Space between links */
     }
 
+    .nav-button{
+        border:none;
+        padding: 5px 5px;
+    }
+
+    /* Turn off logo on small screens */
+    .header-logo {
+        display:none;
+    }
 
     header h1 {
         font-size: 1.5em;
@@ -103,7 +143,7 @@ nav a:hover {
 /* Button styling */
 button,
 .btn {
-    background-color: #932D48;
+    background-color: var(--primary-deep-burgandy);
     /* Primary color */
     color: #FAF9F6;
     border: none;
@@ -115,7 +155,7 @@ button,
 
 button:hover,
 .btn:hover {
-    background-color: #D1A054;
+    background-color: var(--secondary-mustard-yellow);
     /* Warm gold for hover */
 }
 
@@ -124,7 +164,7 @@ main {
     width: 100%;
     padding: 15px;
     box-sizing: border-box;
-    background-color: #F9E4D4;
+    background-color: var(--neutral-light-grey);
     /* Soft beige for sections */
     border-radius: 8px;
 }
@@ -145,9 +185,9 @@ main {
 
 /* Footer styling */
 footer {
-    background-color: #2E2E2E;
+    background-color: var(--neutral-dark-grey);
     /* Dark neutral for footer */
-    color: #FAF9F6;
+    color: var(--neutral-white);
     text-align: center;
     padding: 15px;
     font-size: 0.9em;
@@ -155,7 +195,7 @@ footer {
 
 footer a {
     /* Dark neutral for footer */
-    color: #FAF9F6;
+    color: var(--neutral-white);
     text-align: center;
     padding: 15px;
     font-size: 0.9em;
