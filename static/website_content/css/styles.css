@@ -35,69 +35,78 @@ body {
 
 /* Header styling */
 header {
-    color: var(--neutral-white);
     background-image: url('/static/website_content/images/classroom-red-filter.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    padding: 15px 20px;
-    text-align: center;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    position: sticky;
+    position: relative;
+    width:100%;
 }
 
-header h1 {
-    margin: 0;
-    font-size: 2em;
-    color: var(--neutral-white) ;
-
+.logo-container{
+    width:100%;
+    height:auto;
+    flex-shrink: 0;
 }
 
 /* Logo styling */
 .header-logo {
-    height: 100px;
-    /* Adjust size as needed */
-    width: auto;
-    /* Maintain aspect ratio */
-    margin-right: 20px;
+    width: 85%;
+    height:auto;
     border-radius: 50%;
-    vertical-align: bottom;
+    padding: 10px;
 }
 
-/* Center container styling */
-.header-center {
-    text-align: center;
-    /* Center-align title and nav within .header-center */
-    flex-grow: 1;
-    /* Allows the center section to take up remaining space */
-}
-
-nav {
-
-    background-color: var(--primary-deep-burgandy);
-    display:flex;
-}
-
-nav ul{
-    list-style-type: none;
-    display: flex;
-    justify-content: space-between;
-    bottom:0;
-    padding: 0;
+header h1 {
+    grid-column: 2;
+    grid-row:1;
     margin: 10px;
-    flex-wrap: wrap;
-    align-items: stretch;
-    width:100%
+    text-align: center;
+    font-size: 2em;
+    color: var(--neutral-white);
 }
 
+/* grid setup for header component including navigation */
+.header-grid-container {
+    display: grid;
+    grid-template-columns: 100px auto;
+    grid-template-rows: auto auto;
+    align-items: center;
+}
 
-nav li{
+.header-grid-item-1{
+    grid-column: 1;
+    grid-row:1 / span 2;
+}
+.header-grid-item-2{
+    grid-column: 2;
+    grid-row:1;
+}
+.header-grid-item-3{
+    grid-column: 2;
+    grid-row: 2;
+}
+
+/* Navigation */
+nav {
+    background-color: var(--primary-deep-burgandy);
+    width: 100%;
+}
+
+.nav-ul{
+    list-style-type: none;
+    display:flex;
+    justify-content: space-between;
+    padding: 0;
+    flex-wrap: wrap;
+    margin:0;
+    width:100%;
+}
+
+.nav-li{
     border: solid 1px;
     border-color: var(--monochromatic-dark-burgandy);
     flex:1;
-    display:flex;
 }
 .nav-button {
     padding: 5px 10px;
@@ -116,7 +125,6 @@ nav a {
     text-decoration: none;
     display:flex;
     flex:1;
-    height: 100%;
     width: 100%;
     justify-content: center;
 }
@@ -135,12 +143,21 @@ nav a:hover {
 
 /* Mobile responsiveness - stack the nav vertically on smaller screens */
 @media (max-width: 768px) {
-
+    .header-grid-container{
+        display:block
+    }
+    .header-text-container{
+        width:100%;
+    }
+    .navigation-container{
+        position:relative;
+        height: 15px;
+    }
     nav{
         flex-direction: column;
     }
     /* Change the nav to a column layout */
-    nav ul{
+    .nav-ul{
         flex-wrap: nowrap;
         flex-direction: column;
         justify-content: center;
@@ -148,7 +165,7 @@ nav a:hover {
         display: none;
         margin:0;
     }
-    nav li{
+    .nav-li{
         padding-top: 5px;
     }
 
@@ -188,15 +205,14 @@ main {
     padding: 15px;
     box-sizing: border-box;
     background-color: var(--neutral-light-grey);
-
+    margin: 10px auto;
     border-radius: 8px;
 }
 
 /* Responsive layout for larger screens */
 @media (min-width: 768px) {
     main {
-        width: 33.33%;
-        margin: 0 auto;
+        width: 80%;
     }
 }
 
