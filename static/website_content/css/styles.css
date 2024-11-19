@@ -75,32 +75,50 @@ header h1 {
 }
 
 nav {
-    display: flex;
-    justify-content: space-between;
-    margin-top: auto;
+
     background-color: var(--primary-deep-burgandy);
-    bottom: 0;
-    padding: 15px;
-    flex-wrap: wrap; 
+    display:flex;
 }
 
+nav ul{
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+    bottom:0;
+    padding: 0;
+    margin: 10px;
+    flex-wrap: wrap;
+    align-items: stretch;
+    width:100%
+}
+
+
+nav li{
+    border: solid 1px;
+    border-color: var(--monochromatic-dark-burgandy);
+    flex:1;
+    display:flex;
+}
 .nav-button {
     padding: 5px 10px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
-    margin: 4px 2px;
+    margin: 0;
     cursor: pointer;
 }
 
 nav a {
+    margin:0;
+    padding:0;
     color: var(--secondary-off-white);
     text-decoration: none;
-    padding:10px;
-    border: solid 1px;
-    border-color: var(--monochromatic-dark-burgandy);
+    display:flex;
     flex:1;
+    height: 100%;
+    width: 100%;
+    justify-content: center;
 }
 
 nav a:hover {
@@ -108,24 +126,30 @@ nav a:hover {
     text-decoration: none;
 }
 
+
+@media (min-width: 769px){
+    i.fa.fa-bars{
+        display:none !important;
+    }
+}
+
 /* Mobile responsiveness - stack the nav vertically on smaller screens */
 @media (max-width: 768px) {
-    header{
-        background-image: none;
-        background-color: var(--neutral-dark-grey);
+
+    nav{
+        flex-direction: column;
     }
     /* Change the nav to a column layout */
-    nav {
+    nav ul{
+        flex-wrap: nowrap;
         flex-direction: column;
+        justify-content: center;
         align-items: stretch;
-        /* Center-align links vertically */
-        gap: 5px;
-        /* Space between links */
+        display: none;
+        margin:0;
     }
-
-    .nav-button{
-        border:none;
-        padding: 5px 5px;
+    nav li{
+        padding-top: 5px;
     }
 
     /* Turn off logo on small screens */
@@ -156,16 +180,15 @@ button,
 button:hover,
 .btn:hover {
     background-color: var(--secondary-mustard-yellow);
-    /* Warm gold for hover */
+
 }
 
-/* Main content styling */
 main {
     width: 100%;
     padding: 15px;
     box-sizing: border-box;
     background-color: var(--neutral-light-grey);
-    /* Soft beige for sections */
+
     border-radius: 8px;
 }
 
@@ -186,7 +209,6 @@ main {
 /* Footer styling */
 footer {
     background-color: var(--neutral-dark-grey);
-    /* Dark neutral for footer */
     color: var(--neutral-white);
     text-align: center;
     padding: 15px;
@@ -194,7 +216,6 @@ footer {
 }
 
 footer a {
-    /* Dark neutral for footer */
     color: var(--neutral-white);
     text-align: center;
     padding: 15px;
