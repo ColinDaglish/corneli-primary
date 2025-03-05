@@ -1,0 +1,26 @@
+name: Task
+title: "task/"
+description: Write up a task that needs to be done.
+type: Task
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Write up a task that needs to be done.
+  - type: dropdown
+    id: project-selection
+    attributes:
+      label: Select a project
+      description: Choose the project this task is related to.
+      options:
+        - None
+        - fintrans (cabinetoffice/125)
+      default: 0
+  - type: textarea
+    id: description
+    attributes:
+      label: What needs to be done?
+      description: Also tell us how we will know when it is done.
+      placeholder: "For example: Update the documentation to include the new feature X. We'll know it's done when the documentation has been updated and reviewed."
+    validations:
+      required: true
